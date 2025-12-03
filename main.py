@@ -14,7 +14,7 @@ app = FastAPI(title="Detect.IT API", description="API untuk mendeteksi kesegaran
 # Konfigurasi CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "https://detect-it-three.vercel.app"],
+    allow_origins=["http://localhost:3000", "https://fastapi-example-production-bf63.up.railway.app/predict"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -36,7 +36,7 @@ for i, fruit in enumerate(FRUITS):
 
 # Load model deep learning dengan custom_objects
 try:
-    model = load_model("model/efficientnetv2b0_model_5.h5")
+    model = load_model("model/efficientnetv2b0_model_4.h5")
     print("Model berhasil dimuat.")
 except Exception as e:
     print(f"Gagal memuat model: {e}")
